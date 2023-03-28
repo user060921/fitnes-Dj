@@ -1,0 +1,211 @@
+{% extends 'main.html' %}
+{% load static %}
+{% load i18n %}
+
+
+{% block title %}
+Home
+{% endblock %}
+
+
+{% block content %}
+<!-- chat -->
+  <div id="chat" class="chat shadow-lg bg-warning ">
+    <div  class="chat_header bg-info">
+      <div>
+        <img class="chat_img " src="{% static 'images/logo2.jpg' %}" alt="Logo brand">
+      </div>
+      <div id="chat_exit" class="text-center me-2 text-dark">
+        <i class="fa-solid fa-xmark px-3"></i>
+      </div>
+    </div>
+    <div id="chat_body" class="chat_body">
+      <!-- <div class="response">
+        <div class="message">
+          Lorem ipsum dolor sit.
+        </div>
+      </div> -->
+      <!-- <div class="request">
+        <div class="message">
+          Assalomu Alaykum Saytimizga Xush kelibsiz!!!
+        </div>
+      </div> -->
+    </div>
+  </div>
+
+<div class="bg-warning">
+  
+<!-- Home section start -->
+<section>
+  <div class="container mt-5 ">
+    <div class="row d-sm-flex justify-content-sm-center px-lg-5 pt-4">
+      <div class="col-12 col-lg-6 pb-3 d-sm-flex justify-content-sm-center">
+        <img style="border-radius: 10%; height: 100%; width: 100%;" src="{% static 'images/rasm.jpg' %}" alt="Img" class="img-fluid">
+      </div>
+      <div
+        class="col-12 col-lg-6 mt-md-0 mt-4 p-0   pb-3 d-sm-flex justify-content-sm-center d-flex justify-content-center ">
+        <div style="border-radius: 10%;" class="bg-info text-white  p-sm-5 p-3 card-body">
+          <h4 class="card-title pt-3">{% trans 'Biz xaqimizda' %}</h4>
+          <span class="u-dark"></span>
+          <p class="w-100 mt-lg-3 mt-2 card-text">
+            {{ info.about }}
+          </p>
+          <button id="chat_submit" class="btn btn-dark brr-0 mt-md-2 mt-lg-2  mt-0 mb-3 px-5 py-3">{% trans 'Batafsil' %}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Home section end -->
+
+
+
+<section class="container mt-80">
+  <div class="row px-lg-5">
+    <div class="col-12 position-relative p-0">
+      <p class="bg-1">loremispam</p>
+      <div class="ul-dark w-100"></div>
+      <p class="text-center text-sm-center mt-2 display-6">Lorem ipsum dolor sit amet.</p>
+      <div class="ul-dark2 mt-4"></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="container mt-80">
+  <div class="row px-lg-5">
+    <div class="col-12 col-sm-6 col-lg-3 mt-3 mt-lg-0">
+      <center>
+        <div class="circle_number">
+          1
+        </div>
+      </center>
+      <h3 class="text-center mt-1">Lorem.</h3>
+      <p class="text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla ipsum quia corrupti
+        placeat repellendus eaque?</p>
+    </div>
+    <div class="col-12 col-sm-6 col-lg-3 mt-3 mt-lg-0">
+      <center>
+        <div class="circle_number">
+          2
+        </div>
+      </center>
+      <h3 class="text-center mt-1">Lorem.</h3>
+      <p class="text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla ipsum quia corrupti
+        placeat repellendus eaque?</p>
+    </div>
+    <div class="col-12 col-sm-6 col-lg-3 mt-3 mt-lg-0">
+      <center>
+        <div class="circle_number">
+          3
+        </div>
+      </center>
+      <h3 class="text-center mt-1">Lorem.</h3>
+      <p class="text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla ipsum quia corrupti
+        placeat repellendus eaque?</p>
+    </div>
+    <div class="col-12 col-sm-6 col-lg-3 mt-3 mt-lg-0">
+      <center>
+        <div class="circle_number">
+          4
+        </div>
+      </center>
+      <h3 class="text-center mt-1">Lorem.</h3>
+      <p class="text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla ipsum quia corrupti
+        placeat repellendus eaque?</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="container mt-80">
+  <div class="row px-lg-5">
+    <div class="col-12 position-relative p-0">
+      <p class="bg-1">loremispam</p>
+      <div class="ul-dark w-100"></div>
+      <p class="text-center text-sm-center mt-2 display-6">Lorem ipsum dolor sit amet.</p>
+      <div class="ul-dark2 mt-4"></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="container mt-80">
+  <div class="row px-lg-5">
+    <div class="col-12 col-sm-6 col-lg-3 mt-3 mt-lg-0">
+      <center>
+        <div class="circle_number">
+          1
+        </div>
+      </center>
+      <p class="text-center mt-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla ipsum quia corrupti
+        placeat repellendus eaque?</p>
+    </div>
+    <div class="col-12 col-sm-6 col-lg-3 mt-3 mt-lg-0">
+      <center>
+        <div class="circle_number">
+          2
+        </div>
+      </center>
+      <p class="text-center mt-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla ipsum quia corrupti
+        placeat repellendus eaque?</p>
+    </div>
+    <div class="col-12 col-sm-6 col-lg-3 mt-3 mt-lg-0">
+      <center>
+        <div class="circle_number">
+          3
+        </div>
+      </center>
+      <p class="text-center mt-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla ipsum quia corrupti
+        placeat repellendus eaque?</p>
+    </div>
+    <div class="col-12 col-sm-6 col-lg-3 mt-3 mt-lg-0">
+      <center>
+        <div class="circle_number">
+          4
+        </div>
+      </center>
+      <p class="text-center mt-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla ipsum quia corrupti
+        placeat repellendus eaque?</p>
+    </div>
+  </div>
+</section>
+
+</div>
+
+
+  <section class="container mt-80">
+    <div class="d-flex justify-content-center flex-wrap">
+      <button class="btn btn-dark mx-2 mt-2 px-5"><a href="{{ info.tg_link }}"><i
+            class="fa-sharp fa-solid fa-paper-plane"></i></a></button>
+      <button class="btn btn-dark mx-2 mt-2 px-5"><a href="{{ info.wh_link }}"><i class="fa-brands fa-whatsapp"></i></i></a></button>
+      <button class="btn btn-dark mx-2 mt-2 px-5"><a href="mailto:{{ info.email }}"><i class="fa-solid fa-envelope"></i></a></button>
+      <button class="btn btn-dark mx-2 mt-2 px-5"><a href="tel:{{ info.tel }}"><i class="fa-solid fa-phone"></i></a></button>
+    </div>
+  </section>
+  <footer class="container mt-80">
+    <p>&copy; All Rights Reserved. MyFitness Inc.</p>
+  </footer>
+
+<script>
+    function ajaxRequest(info){
+        $.ajax({
+            url: "{% url 'search_programm' %}",
+            type: "get",
+            data: { 1: info[0].replace('\n', '').replace('\n', '').trim(), 2: info[1].replace('\n', '').replace('\n', '').trim(), 3: info[2].replace('\n', '').replace('\n', '').trim(), 4: info[3].replace('\n', '').replace('\n', '').trim() },
+            success: function (data) {
+                if (data.length != 0) {
+                    for (let i = 0; i < data.length; i++) {
+                        requestFuncLink(data[i].fields.title, `${window.location.origin}/programm_detail/${data[i].fields.slug}`);
+                        chat_body.scrollTop = chat_body.scrollHeight
+                    };
+                } else{
+                    requestFunc('Malumot topilmadi :(');
+                    chat_body.scrollTop = chat_body.scrollHeight
+                }
+                user_selected = []
+            }
+        });
+    }
+</script>
+{% endblock %}

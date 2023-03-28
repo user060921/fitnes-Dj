@@ -1,0 +1,44 @@
+{% extends 'main.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+Fitnes-Maqolalar
+{% endblock %}
+
+
+
+{% block content %}
+<section class="container mt-5">
+    <h3 class="text-center">{% trans 'Fitness Maqolalar' %}</h3>
+    <div class="row  d-flex justify-content-center mt-4">
+        {% if articles %}
+        {% for article in articles %}
+        <div class="bg-warning col-10 col-md-10 my-3 border-dark border border-1">
+            <a href="{% url 'article_detail' article.slug %}">
+              <div class="row">
+                <div class="col-12 col-lg-3 p-0">
+                    <img src="/media/{{ article.picture }}" alt="Image" class="img-fluid">
+                </div>
+                <div class="col-12 col-lg-9">
+                    <p class=" text-center mt-4">
+                        {{ article.title }}
+                    </p>
+                </div>
+            </div>
+            </a>
+        </div>
+        {% endfor %}
+        {% else %}
+        <center>
+            <h1 style="font-size: 400px;">⁉️</h1>
+            <h3>{% trans 'Siz bazadan hamma ma`lumotlarni uchiip tashladingiz' %}</h3>
+        </center>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}
+
+
+
+

@@ -1,0 +1,46 @@
+{% extends 'main.html' %}
+{% load i18n %}
+
+
+{% block title %}
+Fitness - Profile
+{% endblock %}
+
+
+{% block content %}
+<center>
+    <section style=" border-radius: 10%; width: 70%;align-items: center; height: 500px;margin-bottom: 100px;" class="container mt-3 bg-dark text-white border border-dark">
+        <h4 class=" text-center w-75" style="margin-top: 10px;">{% trans 'Sizning malumotlaringiz' %}</h4>
+        <form class="row justify-content-center " method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="col-12 col-md-8 col-lg-6 mt-5">
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" name="email" id="floatingInput" placeholder="E-mail" required value="{{ request.user.email }}">
+                <label for="floatingInput">{% trans 'E-mail pochta' %}</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="fname" id="floatingInput" placeholder="Ism" required value="{{ user.first_name }}">
+                <label for="floatingInput">{% trans 'Ism' %}</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="lname" id="floatingInput" placeholder="Familiya" required value="{{ user.last_name }}">
+                <label for="floatingInput">{% trans 'Familiya' %}</label>
+            </div>
+            <div class=" mb-3 d-flex">
+                <input type="checkbox" name="avater_delete" id="checkboxInput">
+                <label style="margin-left: 5px;" for="checkboxInput">{% trans 'Rasimni o`chirish' %}</label>
+            </div>
+            <div>
+                <input type="file" name="avatar" class="form-control form-control-lg" id="floatingInput">
+            </div>
+            <div class="d-flex justify-content-center mt-3">
+                <button class="btn btn-success px-4">{% trans 'Saqlash' %}</button>
+            </div>
+            </div>
+        </form>
+    </section>
+</center>
+{% endblock %}
+
+
+

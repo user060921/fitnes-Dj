@@ -1,0 +1,40 @@
+{% extends 'main.html' %}
+{% load i18n %}
+
+
+{% block content %}
+<section class="container mt-80">
+    <p class="m-auto text-center w-75">{% trans 'Siz xali akkaunt yaratmadingizmi?' %}</p>
+    <p class="m-auto text-center w-75">{% trans 'Pasdagi forma orqali ro`yxatdan o`tishingiz mumkin' %}</p>
+    <form class="row justify-content-center" method="post">
+        {% csrf_token %}
+        <div class="col-12 col-md-8 col-lg-6 mt-5">
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" name="email" id="floatingInput" placeholder="E-mail" required>
+            <label for="floatingInput">{% trans 'E-mail pochta' %}</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="fname" id="floatingInput" placeholder="Ism" required>
+            <label for="floatingInput">{% trans 'Ism' %}</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="lname" id="floatingInput" placeholder="Familiya" required>
+            <label for="floatingInput">{% trans 'Familiya' %}</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Parol" required>
+            <label for="floatingPassword">{% trans 'Parol' %}</label>
+        </div>
+        
+        <input class="form-control w-25 mt-3 btn-dark m-auto" type="submit" value="{% trans 'Kiring' %}">
+        </div>
+    </form>
+    {% if message %}
+    <center>
+        <div class="alert alert-danger w-50 mt-3">
+           {% trans '{{ message }}' %}
+        </div>
+    </center>
+    {% endif %}
+</section>
+{% endblock %}

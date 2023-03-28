@@ -1,0 +1,43 @@
+{% extends 'main.html' %}
+{% load static %}
+{% load i18n %}
+
+
+{% block title %}
+Fitness - {{ programm.title }}
+{% endblock %}
+
+
+
+{% block content %}
+<section class="container mt-4">
+  <center>
+
+    <div style="width: 60%;align-items: center;border-radius: 10%;" class="bg-dark text-white row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <p class="text-center" data-type="Maqola" id="title_text">{{ programm.title }}</p>
+            {% if not is_liked is None %}
+            <i class="heart fa-{{ is_liked }} fa-heart fa-3x" data-favorit="{{ article_item.slug }}"></i>
+            {% endif %}
+          </div>
+          <center>
+            <img src="/media/{{ programm.picture }}" class="img-fluid">
+          </center>
+        </div>
+        <div class="col-12 col-md-8 mt-3 p_content">
+            <p>
+                {{ programm.context | safe }}
+            </p>
+            <center>
+              <a class="btn btn-info mb-2" href="{% url 'favorite' %}">{% trans 'Sevimliga O`tish' %}</a>
+            </center>
+            <center>
+              <a class="btn btn-danger" href="{% url 'articles' %}">{% trans 'Dasturlarga O`tish' %}</a>
+            </center>
+        </div>
+    </div>
+  </center>
+</section>
+
+{% endblock %}

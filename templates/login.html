@@ -1,0 +1,34 @@
+{% extends 'main.html' %}
+{% load i18n %}
+
+{% block content %}
+
+<section class="container mt-80 mb-5">
+    <p class="m-auto text-center w-75">{% trans 'Akkauntingiz bormi?' %}</p>
+    <p class="m-auto text-center w-75">{% trans 'Siz e-pochtangizni va parolingizni kiritishingiz mumkin' %}</p>
+    <form class="row justify-content-center align-items-center mt-5" method="post">
+        {% csrf_token %}
+      <div class="col-12 col-md-8 col-lg-6 mt-5">
+        <div class="form-floating mb-3">
+          <input value="{{ email }}" type="email" class="form-control" name="email" id="floatingInput" placeholder="E-mail">
+          <label for="floatingInput">{% trans 'E-mail pochta' %}</label>
+        </div>
+        <div class="form-floating">
+          <input value="{{ password }}" type="password" class="form-control" name="password" id="floatingPassword" placeholder="Parol">
+          <label for="floatingPassword">{% trans 'Parol' %}</label>
+        </div>
+        <input class="form-control w-25 mt-3 btn-dark m-auto" type="submit" value="{% trans 'Davay'  %}">
+        
+        <a href="{% url 'reset_password' %}" class="sim-a d-block mt-3 text-center">{% trans 'Parol esdan chiqdimi?' %}</a>
+      </div>
+    </form>
+    {% if message %}
+    <center>
+        <div class="alert alert-danger w-50 mt-3">
+            {% trans '{{ message }}' %}
+        </div>
+    </center>
+    {% endif %}
+  </section>
+
+{% endblock %}

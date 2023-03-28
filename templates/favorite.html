@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+Fitness - Sevimli
+{% endblock  %}
+
+
+{% block content %}
+
+<section class="container mt-5">
+    <h3 class="text-center">{% trans 'Bu erda sizga yoqgan dasturlar va maqolalar saqlanadi!' %}</h3>
+    <div class="row justify-content-center mt-4 text-center">
+        {% if favorites %}
+        {% for favorite in favorites %}
+        <div class="bg-info col-10 mt-0 border-dark border border-1">
+            <div class="row align-items-center p-3">
+                <div class="col-12 col-sm-2">
+                     <i onclick="removeFavoriteObj(event);" class="heart fa-solid fa-heart fa-3x" data-favorite="{{ favorite.favorite_slug }}"></i>
+                </div>
+                <div class="col-12 col-sm-8">
+                    <a href="{% if favorite.favorite_type == 'Maqola' %}/article_detail/{% else %}/programm_detail/{% endif %}{{ favorite.favorite_slug }}"><p class="m-0">{{ favorite.favorite_title }}</p></a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <h1 style="font-size: 400px;">☹️</h1>
+        <h3>{% trans 'Bu yerda siz yoqritirgan ma`lumotlar yo`q' %}</h3>
+        {% endif %}
+    </div>
+</section>
+
+{% endblock  %}

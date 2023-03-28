@@ -1,0 +1,41 @@
+{% extends 'main.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+Fitnes-Dasturlar
+{% endblock %}
+
+
+
+{% block content %}
+<section class="container mt-5">
+    <h3 class="text-center">{% trans 'Fitness Dasturlar' %}</h3>
+    <div class="row  d-flex justify-content-center mt-4">
+        {% if programms %}
+        {% for programm in programms %}
+        <div class="bg-warning col-10 col-md-10 my-3 border-dark border border-1 text-white">
+            <a href="{% url 'programm_detail' programm.slug %}">
+              <div class="row" style="border-radius: 10%;">
+                <div class="col-12 col-lg-3 p-0">
+                    <img src="/media/{{ programm.picture }}" alt="Image" class="img-fluid">
+                </div>
+                <div class="col-12 col-lg-9">
+                    <p class=" text-center mt-4">
+                        {{ programm.title }}
+                    </p>
+                </div>
+            </div>
+            </a>
+        </div>
+        {% endfor %}
+        {% else %}
+        <center>
+            <h1 style="font-size: 400px;">⁉️</h1>
+            <h3>{% trans 'Siz bazadan hamma ma`lumotlarni uchiip tashladingiz' %}</h3>
+        </center>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}
+
